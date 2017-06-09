@@ -1,0 +1,15 @@
+<%= link_to 'ツイートを投稿', new_tweet_path, class: "btn btn-primary" %>
+
+<% @tweets.each do |tweet| %>
+<div class="tweet-frame">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <p><%= tweet.content %></p>
+    </div>
+    <div class="panel-footer">
+      <%= link_to '編集', edit_tweet_path(tweet), class: "btn btn-default" %>
+      <%= link_to '削除', tweet, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: "btn btn-warning" %></td>
+    </div>
+  </div>
+</div>
+<% end %>
